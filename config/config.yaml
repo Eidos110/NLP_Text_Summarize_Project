@@ -3,7 +3,7 @@ artifacts_root: artifacts
 
 data_ingestion:
   root_dir: artifacts/data_ingestion
-  source_URL: https://github.com/Eidos110/open_data/raw/main/sumsum_corpus.zip
+  source_URL: https://github.com/Eidos110/open_data/raw/main/corpus_sumsum.zip
   local_data_file: artifacts/data_ingestion/data.zip
   unzip_dir: artifacts/data_ingestion
 
@@ -12,9 +12,12 @@ data_ingestion:
 data_validation:
   root_dir: artifacts/data_validation
   STATUS_FILE: artifacts/data_validation/status.txt
-  ALL_REQUIRED_FILES: ["train.json", "test.json", "val.json"]
+  ALL_REQUIRED_FILES: ["train", "test", "validation"]
+  VALIDATE_FILE: ["train.json", "test.json", "validation.json"]
 
 
 
 data_transformation:
-  
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/corpus_dataset
+  tokenizer_name: google/pegasus-cnn_dailymail

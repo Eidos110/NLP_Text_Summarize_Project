@@ -15,7 +15,7 @@ class DataValidation:
 
     def validate_all_files_exist(self) -> bool:
         try:
-            all_files = os.listdir(os.path.join("artifacts", "data_ingestion", "corpus"))
+            all_files = os.listdir(os.path.join("artifacts", "data_ingestion", "corpus_dataset"))
             for file in all_files:
                 if file not in self.config.ALL_REQUIRED_FILES:
                     with open(self.config.STATUS_FILE, 'a') as f:
@@ -99,8 +99,8 @@ class DataValidation:
     def validate_all(self) -> bool:
         validation_status = True
 
-        for file in self.config.ALL_REQUIRED_FILES:
-            with open(os.path.join("artifacts", "data_ingestion", "corpus", file), 'r') as f:
+        for file in self.config.VALIDATE_FILE:
+            with open(os.path.join("artifacts", "data_ingestion", file), 'r') as f:
                 text = f.read()
                 text = self.validate_text_normalization(text)
                 if not self.validate_tokenization(text):
