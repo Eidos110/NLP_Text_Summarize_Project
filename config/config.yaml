@@ -21,3 +21,10 @@ data_transformation:
   root_dir: artifacts/data_transformation
   data_path: artifacts/data_ingestion/corpus_dataset
   tokenizer_name: google/pegasus-cnn_dailymail
+
+
+
+training_model:
+  root_dir: artifacts/training_model
+  data_path: artifacts/data_transformation/corpus_dataset
+  model_ckpt: google/pegasus-cnn_dailymail
