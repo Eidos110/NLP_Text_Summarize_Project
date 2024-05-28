@@ -1,4 +1,4 @@
-from src.Text_Summarize.config.configuration import TrainingModelConfig
+from src.Text_Summarize.entity.config_entity import TrainingModelConfig
 import os
 from transformers import TrainingArguments, Trainer
 from transformers import DataCollatorForSeq2Seq
@@ -7,7 +7,7 @@ from datasets import load_dataset, load_from_disk
 import torch
 
 
-
+#os.environ['HUGGINGFACE_HUB_CACHE'] = 'E:\\C.TSUBASA\\.cache\\huggingface\\hub'
 
 class TrainingModel:
     def __init__(self, config: TrainingModelConfig):

@@ -28,3 +28,14 @@ training_model:
   root_dir: artifacts/training_model
   data_path: artifacts/data_transformation/corpus_dataset
   model_ckpt: google/pegasus-cnn_dailymail
+
+
+
+
+
+evaluation_model:
+  root_dir: artifacts/evaluation_model
+  data_path: artifacts/data_transformation/corpus_dataset
+  model_path: artifacts/training_model/pegasus-corpus-model
+  tokenizer: artifacts/training_model/tokenizer
+  metrics_file_name: artifacts/evaluation_model/metrics.csv
