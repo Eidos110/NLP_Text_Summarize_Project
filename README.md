@@ -28,7 +28,6 @@ This project uses Google's PEGASUS model for abstractive text summarization, pro
 3. **Run the FastAPI Server**:
    ```sh
    uvicorn app:app --reload
-4. **Test the API**: Navigate to http://127.0.0.1:8000/docs for interactive Swagger documentation.
 
 ## Key Features
 
